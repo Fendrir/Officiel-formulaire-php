@@ -8,7 +8,7 @@
     <title>Starter Template Bootstrap + Modal</title>
 
     <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <!-- My css file -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -67,7 +67,7 @@
             try
             {
               // On se connecte à MySQL
-              $bdd = new PDO('mysql:host=localhost;dbname=annonces-immo;charset=utf8', 'root', 'root');
+              $bdd = new PDO('mysql:host=127.0.0.1;dbname=annonces_immo;charset=utf8', 'root', 'admin');
             }
             catch(Exception $e)
             {
@@ -121,7 +121,7 @@
         <div class="form-group">
           <label class="control-label col-md-3" for="age">Age:</label>
           <div class="col-md-9">
-            <input type="number" class="form-control" id="age" name="age" value="<?= isset($_POST['age']) ? $_POST['age'] : "" ?>" required>
+            <input type="number" min="1"  max="120" class="form-control" id="age" name="age" value="<?= isset($_POST['age']) ? $_POST['age'] : "" ?>" required>
           </div>
         </div>
         <div class="form-group">
@@ -158,9 +158,9 @@
     </div><!-- End container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
 

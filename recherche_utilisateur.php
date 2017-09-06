@@ -34,7 +34,7 @@
     try
     {
       // On se connecte à MySQL
-      $bdd = new PDO('mysql:host=localhost;dbname=annonces-immo;charset=utf8', 'root', 'root');
+      $bdd = new PDO('mysql:host=127.0.0.1;dbname=annonces_immo;charset=utf8', 'root', 'admin');
     }
     catch(Exception $e)
     {
