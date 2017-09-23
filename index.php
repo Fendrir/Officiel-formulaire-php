@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Test Formulaire</title>
-</head>
-<body>
+<?php
 
-<ul>
-  <li><a href="formulaire1.php">Formulaire 1</a></li>
-  <li><a href="recherche_utilisateur.php">Recherche Utilisateur</a></li>
-  <li><a href="ajout_utilisateur.php">Ajout Utilisateur</a></li>
-  <li><a href="session_test.php">Session de test</a></li>
-</ul>
-</body>
-</html>
+if (isset($_GET["p"])) {
+
+	$p = $_GET["p"];
+
+} else {
+
+	$p = "accueil";
+
+}
+
+ob_start();
+
+if ($p === "formulaire1"){
+
+	include("./pages/formulaire1.php");
+
+} elseif ($p === "recherche_utilisateur"){
+
+	include("./pages/recherche_utilisateur.php");
+
+} elseif ($p === "ajout_utilisateur"){
+
+	include("./pages/ajout_utilisateur.php");
+
+} elseif ($p === "recherche"){
+
+	include("./pages/recherche.php");
+
+}
+
+$content = ob_get_clean();
+include("template/default.php");
+
+?>
